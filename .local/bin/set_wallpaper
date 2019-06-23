@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+# Set given image as background
+
+require 'fileutils'
+
+module Tool
+  class SetWallpaper
+    attr_reader :image, :destination
+
+    def initialize(image_path)
+      @image = File.expand_path image_path, __FILE__
+      @destination = File.expand_path destination_path, __FILE__
+    rescue TypeError
+      abort inspect
+    end
+
+    def run!
+      exit unless File.file? image
+      full_destination = File.join destination, "wallpaper.#{image_extname}"
+      FileUtils.cp image, full_destination
+      `xwallpaper --zoom #{full_destination}`
+    rescue Errno::ENOENT
+      abort "No such image: #{image}"
+    end
+
+    def inspect
+      'Usage: set_wallpaper <image>'
+    end
+
+    private
+
+    def destination_path
+      ENV['XDG_CONFIG_HOME'] || '~/.config'
+    end
+
+    def image_extname
+      image.split('.').last
+    end
+  end
+end
+
+Tool::SetWallpaper.new(ARGV[0]).run!
