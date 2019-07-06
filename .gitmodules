@@ -1,0 +1,6 @@
+[submodule "st"]
+	path = st
+	url = ./repository/myspace/st
+[submodule "repository/myspace/st"]
+	path = repository/myspace/st
+	url = https://github.com/matteocellucci/st.git

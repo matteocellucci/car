@@ -16,3 +16,5 @@ alias dots="git --git-dir=$HOME/.car/ --work-tree=$HOME"
 dots config status.showUntrackedFiles no
 ```
 
+## Submodules
+- [st](https://github.com/matteocellucci/st)
