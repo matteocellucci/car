@@ -18,3 +18,4 @@ dots config status.showUntrackedFiles no
 
 ## Submodules
 - [st](https://github.com/matteocellucci/st)
+- [globalias](https://github.com/matteocellucci/globalias)

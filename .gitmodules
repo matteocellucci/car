@@ -4,3 +4,6 @@
 [submodule "repository/myspace/st"]
 	path = repository/myspace/st
 	url = https://github.com/matteocellucci/st.git
+[submodule ".oh-my-zsh/custom/plugins/globalias"]
+	path = .oh-my-zsh/custom/plugins/globalias
+	url = https://github.com/matteocellucci/globalias.git
